@@ -1,0 +1,22 @@
+{
+  "name": "testing-practice",
+  "version": "1.0.0",
+  "description": "testing using jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tushar-droid/Testing-practice.git"
+  },
+  "author": "Tushar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tushar-droid/Testing-practice/issues"
+  },
+  "homepage": "https://github.com/tushar-droid/Testing-practice#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
