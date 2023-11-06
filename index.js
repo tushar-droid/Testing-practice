@@ -1,4 +1,5 @@
 const capitalize = (inp) =>{
+    if(inp === undefined) return
     var first_char = inp.charAt(0);
     first_char = first_char.toUpperCase();
     var res = first_char + inp.slice(1);
@@ -7,6 +8,7 @@ const capitalize = (inp) =>{
 
 
 const reverseString = (inp) =>{
+    if(inp ===undefined) return
     var rev_string ='';
     for(var i=inp.length-1; i>=0; i--){
         rev_string +=inp.charAt(i);
@@ -15,10 +17,10 @@ const reverseString = (inp) =>{
 }
 
 const calculator = {
-    add: (val1, val2) => val1+val2,
-    subtract: (val1, val2) => val1-val2,
-    divide: (val1,val2) => val1/val2,
-    multiply: (val1, val2) => val1*val2
+    add: (val1, val2) => val1 && val2 ?val1+val2: 'Missing value',
+    subtract: (val1, val2) => val1 && val2 ?val1-val2: 'Missing value',
+    divide: (val1,val2) => val1 && val2 ?val1/val2: 'Missing value',
+    multiply: (val1, val2) => val1 && val2 ?val1*val2: 'Missing value',
 }
 const caesarCipher = (inp, shift_factor) =>{
     //Z = 90 && z = 122  A = 65 && a==97  characters are between (65 and 90) and (97 and 122)
@@ -41,3 +43,5 @@ const caesarCipher = (inp, shift_factor) =>{
     }
     console.log(encrypted_message)
 }   
+
+module.exports = {capitalize, reverseString, calculator, caesarCipher};

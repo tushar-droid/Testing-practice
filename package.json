@@ -4,7 +4,8 @@
   "description": "testing using jest",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "watch-test": "jest --watch *.js"
   },
   "repository": {
     "type": "git",
