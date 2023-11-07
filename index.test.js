@@ -1,4 +1,4 @@
-const {capitalize, reverseString, calculator} = require('./index');
+const {capitalize, reverseString, calculator, caesarCipher} = require('./index');
 
 test('capitalize tushar', () =>{
     expect(capitalize('tushar')).toMatch('Tushar')
@@ -76,3 +76,54 @@ test('missing 2 value', () =>{
     expect(calculator.subtract()).toBe('Missing value')
 });
 
+// =======================
+test('Dividing two simple values', () =>{
+    expect(calculator.divide(80,2)).toBe(40)
+});
+test('Dividing one negative values', () =>{
+    expect(calculator.divide(-80,2)).toBe(-40)
+});
+test('Dividing both negative values', () =>{
+    expect(calculator.divide(-80,-2)).toBe(40)
+});
+test('Dividing when denominator is bigger', () =>{
+    expect(calculator.divide(80,160)).toBe(0.5)
+});
+test('Dividing with one missing value', () =>{
+    expect(calculator.divide(80)).toBe('Missing value')
+});
+test('Dividing with both missing value', () =>{
+    expect(calculator.divide()).toBe('Missing value')
+});
+
+//=======================
+test('multiplying two simple values', () =>{
+    expect(calculator.multiply(80,2)).toBe(160)
+});
+test('multiplying one negative values', () =>{
+    expect(calculator.multiply(-80,2)).toBe(-160)
+});
+test('multiplying both negative values', () =>{
+    expect(calculator.multiply(-80,-2)).toBe(160)
+});
+
+test('multiplying with one missing value', () =>{
+    expect(calculator.multiply(80)).toBe('Missing value')
+});
+test('multiplying with both missing value', () =>{
+    expect(calculator.multiply()).toBe('Missing value')
+});
+
+//===============================================
+test('ceaser cipher with 1 shift factor ', () =>{
+    expect(caesarCipher('Tushar',1)).toBe('Uvtibs')
+});
+test('ceaser cipher with negative shift factor ', () =>{
+    expect(caesarCipher('Tushar',-1)).toBe('Strgzq')
+});
+test('ceaser cipher with no shift factor ', () =>{
+    expect(caesarCipher('Tushar')).toBe('Missing values')
+});
+test('ceaser cipher with no value provided ', () =>{
+    expect(caesarCipher(-1)).toBe('Missing values')
+});
